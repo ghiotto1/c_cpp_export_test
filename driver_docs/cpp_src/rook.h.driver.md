@@ -17,11 +17,11 @@ The `Rook` class includes several public member functions that define its core f
 - **Type**: `class`
 - **Description**: The `Rook` class represents a chess rook piece and is derived from the `RestrictedPiece` class. It encapsulates the behavior and characteristics of a rook, including its ability to move vertically or horizontally across the board, as determined by the `canMoveTo` method. The class provides a constructor to initialize the rook with a specific color, a destructor, a method to return the point value of the rook (which is 5), and a method to display the rook on the board. The `Rook` class does not have any additional member variables beyond those inherited from `RestrictedPiece`.
 - **Member Functions**:
-    - [`Rook::Rook`](rook.cpp.driver.md#RookRook)
-    - [`Rook::~Rook`](rook.cpp.driver.md#RookRook)
-    - [`Rook::value`](rook.cpp.driver.md#Rookvalue)
-    - [`Rook::canMoveTo`](rook.cpp.driver.md#RookcanMoveTo)
-    - [`Rook::display`](rook.cpp.driver.md#Rookdisplay)
+    - [`Rook::Rook`](rook.cpp.driver.md#Rook::Rook)
+    - [`Rook::~Rook`](rook.cpp.driver.md#Rook::~Rook)
+    - [`Rook::value`](rook.cpp.driver.md#Rook::value)
+    - [`Rook::canMoveTo`](rook.cpp.driver.md#Rook::canMoveTo)
+    - [`Rook::display`](rook.cpp.driver.md#Rook::display)
 - **Inherits from**:
     - [`RestrictedPiece`](restrictedPiece.h.driver.md#RestrictedPiece)
 

@@ -1,7 +1,7 @@
 # Purpose
-The provided C++ source code file, `pawn.cpp`, is part of a chess game implementation, specifically handling the behavior and rules associated with the pawn piece. This file defines the [`Pawn`](#PawnPawn) class, which inherits from a `RestrictedPiece` class, indicating that it has specific movement constraints. The [`Pawn`](#PawnPawn) class encapsulates the unique movement and promotion rules of a pawn in chess, such as moving forward one square, capturing diagonally, and the special two-square initial move. A significant feature of this class is its ability to promote a pawn to a queen when it reaches the opponent's end of the board, achieved through a delegate pattern where the pawn delegates its behavior to a `Queen` object upon promotion.
+The provided C++ source code file, `pawn.cpp`, is part of a chess game implementation, specifically handling the behavior and rules associated with the pawn piece. This file defines the [`Pawn`](#Pawn::Pawn) class, which inherits from a `RestrictedPiece` class, indicating that it has specific movement constraints. The [`Pawn`](#Pawn::Pawn) class encapsulates the unique movement and promotion rules of a pawn in chess, such as moving forward one square, capturing diagonally, and the special two-square initial move. A significant feature of this class is its ability to promote a pawn to a queen when it reaches the opponent's end of the board, achieved through a delegate pattern where the pawn delegates its behavior to a `Queen` object upon promotion.
 
-The [`Pawn`](#PawnPawn) class includes several key methods: [`moveTo`](#PawnmoveTo), which handles the logic for moving the pawn and promoting it if necessary; [`canMoveTo`](#PawncanMoveTo), which checks if a move is valid according to pawn movement rules; and [`display`](#Pawndisplay), which outputs the pawn's representation on the board. The class also manages its location on the board and interacts with other components like `Square` and `Board` to determine valid moves and promotions. This file is part of a broader chess project, and it provides specific functionality for the pawn piece, integrating with other components like `queen.h` and `board.h` to ensure cohesive gameplay mechanics.
+The [`Pawn`](#Pawn::Pawn) class includes several key methods: [`moveTo`](#Pawn::moveTo), which handles the logic for moving the pawn and promoting it if necessary; [`canMoveTo`](#Pawn::canMoveTo), which checks if a move is valid according to pawn movement rules; and [`display`](#Pawn::display), which outputs the pawn's representation on the board. The class also manages its location on the board and interacts with other components like `Square` and `Board` to determine valid moves and promotions. This file is part of a broader chess project, and it provides specific functionality for the pawn piece, integrating with other components like `queen.h` and `board.h` to ensure cohesive gameplay mechanics.
 # Imports and Dependencies
 
 ---
@@ -16,13 +16,13 @@ The [`Pawn`](#PawnPawn) class includes several key methods: [`moveTo`](#Pawnmove
 ### Pawn<!-- {{#data_structure:Pawn}} -->
 - **Description**: [See definition](pawn.h.driver.md#Pawn)
 - **Member Functions**:
-    - [`Pawn::Pawn`](#PawnPawn)
-    - [`Pawn::~Pawn`](#PawnPawn)
-    - [`Pawn::setLocation`](#PawnsetLocation)
-    - [`Pawn::value`](#Pawnvalue)
-    - [`Pawn::moveTo`](#PawnmoveTo)
-    - [`Pawn::canMoveTo`](#PawncanMoveTo)
-    - [`Pawn::display`](#Pawndisplay)
+    - [`Pawn::Pawn`](#Pawn::Pawn)
+    - [`Pawn::~Pawn`](#Pawn::~Pawn)
+    - [`Pawn::setLocation`](#Pawn::setLocation)
+    - [`Pawn::value`](#Pawn::value)
+    - [`Pawn::moveTo`](#Pawn::moveTo)
+    - [`Pawn::canMoveTo`](#Pawn::canMoveTo)
+    - [`Pawn::display`](#Pawn::display)
 - **Inherits from**:
     - `RestrictedPiece`
 
@@ -97,7 +97,7 @@ The `moveTo` function attempts to move a pawn to a specified square, handling bo
 - **Output**:
     - Returns a boolean value indicating whether the move was successful.
 - **Functions called**:
-    - [`Pawn::setLocation`](#PawnsetLocation)
+    - [`Pawn::setLocation`](#Pawn::setLocation)
 - **See also**: [`Pawn`](pawn.h.driver.md#Pawn)  (Data Structure)
 
 

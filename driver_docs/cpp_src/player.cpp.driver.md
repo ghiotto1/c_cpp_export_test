@@ -1,7 +1,7 @@
 # Purpose
-The `player.cpp` file is part of a Chess game project and implements the [`Player`](#PlayerPlayer) class, which encapsulates the behavior and attributes of a chess player. This file provides functionality specific to managing a player's actions and state within a game, such as making moves, checking if the player is in check, capturing pieces, and calculating the player's score based on captured pieces. The class constructor initializes a player with a name, color, a reference to their king, and a set of pieces they control. The [`makeMove`](#PlayermakeMove) function handles player input for moves, ensuring they are valid and in algebraic notation, and then executes the move on the board. The [`inCheck`](#PlayerinCheck) function determines if the player's king is under threat from any of the opponent's pieces, while the [`capture`](#Playercapture) function updates the state of a captured piece and adds it to the player's collection of captured pieces.
+The `player.cpp` file is part of a Chess game project and implements the [`Player`](#Player::Player) class, which encapsulates the behavior and attributes of a chess player. This file provides functionality specific to managing a player's actions and state within a game, such as making moves, checking if the player is in check, capturing pieces, and calculating the player's score based on captured pieces. The class constructor initializes a player with a name, color, a reference to their king, and a set of pieces they control. The [`makeMove`](#Player::makeMove) function handles player input for moves, ensuring they are valid and in algebraic notation, and then executes the move on the board. The [`inCheck`](#Player::inCheck) function determines if the player's king is under threat from any of the opponent's pieces, while the [`capture`](#Player::capture) function updates the state of a captured piece and adds it to the player's collection of captured pieces.
 
-The file includes several key components such as the [`makeMove`](#PlayermakeMove), [`inCheck`](#PlayerinCheck), [`capture`](#Playercapture), and [`score`](#Playerscore) methods, which are central to the player's interaction with the game. The [`makeMove`](#PlayermakeMove) method is particularly important as it interfaces with the board to execute moves, while [`inCheck`](#PlayerinCheck) and [`capture`](#Playercapture) manage game state and player strategy. The file also defines accessors like [`getName`](#PlayergetName), [`isWhite`](#PlayerisWhite), [`myPieces`](#PlayermyPieces), and [`myKing`](#PlayermyKing), which provide information about the player's identity and current game status. This file is a C++ source file that is likely part of a larger application, interacting with other components such as `board.h`, `game.h`, and `player.h`, and does not define a standalone executable. Instead, it contributes to the broader functionality of the Chess game by managing player-specific logic and interactions.
+The file includes several key components such as the [`makeMove`](#Player::makeMove), [`inCheck`](#Player::inCheck), [`capture`](#Player::capture), and [`score`](#Player::score) methods, which are central to the player's interaction with the game. The [`makeMove`](#Player::makeMove) method is particularly important as it interfaces with the board to execute moves, while [`inCheck`](#Player::inCheck) and [`capture`](#Player::capture) manage game state and player strategy. The file also defines accessors like [`getName`](#Player::getName), [`isWhite`](#Player::isWhite), [`myPieces`](#Player::myPieces), and [`myKing`](#Player::myKing), which provide information about the player's identity and current game status. This file is a C++ source file that is likely part of a larger application, interacting with other components such as `board.h`, `game.h`, and `player.h`, and does not define a standalone executable. Instead, it contributes to the broader functionality of the Chess game by managing player-specific logic and interactions.
 # Imports and Dependencies
 
 ---
@@ -17,16 +17,16 @@ The file includes several key components such as the [`makeMove`](#PlayermakeMov
 ### Player<!-- {{#data_structure:Player}} -->
 - **Description**: [See definition](player.h.driver.md#Player)
 - **Member Functions**:
-    - [`Player::Player`](#PlayerPlayer)
-    - [`Player::~Player`](#PlayerPlayer)
-    - [`Player::makeMove`](#PlayermakeMove)
-    - [`Player::inCheck`](#PlayerinCheck)
-    - [`Player::capture`](#Playercapture)
-    - [`Player::getName`](#PlayergetName)
-    - [`Player::isWhite`](#PlayerisWhite)
-    - [`Player::score`](#Playerscore)
-    - [`Player::myPieces`](#PlayermyPieces)
-    - [`Player::myKing`](#PlayermyKing)
+    - [`Player::Player`](#Player::Player)
+    - [`Player::~Player`](#Player::~Player)
+    - [`Player::makeMove`](#Player::makeMove)
+    - [`Player::inCheck`](#Player::inCheck)
+    - [`Player::capture`](#Player::capture)
+    - [`Player::getName`](#Player::getName)
+    - [`Player::isWhite`](#Player::isWhite)
+    - [`Player::score`](#Player::score)
+    - [`Player::myPieces`](#Player::myPieces)
+    - [`Player::myKing`](#Player::myKing)
 
 **Methods**
 
@@ -73,7 +73,7 @@ The `makeMove` function allows a player to input and execute a move in a chess g
 - **Output**:
     - Returns a boolean indicating whether the move was successfully executed.
 - **Functions called**:
-    - [`Player::inCheck`](#PlayerinCheck)
+    - [`Player::inCheck`](#Player::inCheck)
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
@@ -91,7 +91,7 @@ The `inCheck` function determines if the current player's king is in check by ch
 - **Output**:
     - A boolean value indicating whether the player's king is in check (true if in check, false otherwise).
 - **Functions called**:
-    - [`Player::myKing`](#PlayermyKing)
+    - [`Player::myKing`](#Player::myKing)
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 

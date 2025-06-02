@@ -1,7 +1,7 @@
 # Purpose
-The `restrictedPiece.cpp` file is part of a larger chess application, as indicated by its inclusion in the "ChessProject." This file defines the implementation of the [`RestrictedPiece`](#RestrictedPieceRestrictedPiece) class, which inherits from a base class `Piece`. The primary purpose of this class is to represent a chess piece with movement restrictions, specifically tracking whether the piece has moved from its initial position. This functionality is crucial for implementing chess rules that depend on a piece's movement history, such as castling for rooks and pawns' initial double-step move.
+The `restrictedPiece.cpp` file is part of a larger chess application, as indicated by its inclusion in the "ChessProject." This file defines the implementation of the [`RestrictedPiece`](#RestrictedPiece::RestrictedPiece) class, which inherits from a base class `Piece`. The primary purpose of this class is to represent a chess piece with movement restrictions, specifically tracking whether the piece has moved from its initial position. This functionality is crucial for implementing chess rules that depend on a piece's movement history, such as castling for rooks and pawns' initial double-step move.
 
-The file includes two header files, `player.h` and `restrictedPiece.h`, suggesting that it interacts with player-related functionality and defines its own interface in `restrictedPiece.h`. The class constructor initializes the piece's color and sets a private member `_moved` to `false`, indicating that the piece has not yet moved. The [`moveTo`](#RestrictedPiecemoveTo) method overrides a similar method in the base class to update the `_moved` status only if a valid move is executed and the piece has not moved before. The [`hasMoved`](#RestrictedPiecehasMoved) method provides a public interface to check the movement status of the piece. This file is a focused implementation, providing specific functionality related to movement restrictions within the broader context of a chess game.
+The file includes two header files, `player.h` and `restrictedPiece.h`, suggesting that it interacts with player-related functionality and defines its own interface in `restrictedPiece.h`. The class constructor initializes the piece's color and sets a private member `_moved` to `false`, indicating that the piece has not yet moved. The [`moveTo`](#RestrictedPiece::moveTo) method overrides a similar method in the base class to update the `_moved` status only if a valid move is executed and the piece has not moved before. The [`hasMoved`](#RestrictedPiece::hasMoved) method provides a public interface to check the movement status of the piece. This file is a focused implementation, providing specific functionality related to movement restrictions within the broader context of a chess game.
 # Imports and Dependencies
 
 ---
@@ -15,10 +15,10 @@ The file includes two header files, `player.h` and `restrictedPiece.h`, suggesti
 ### RestrictedPiece<!-- {{#data_structure:RestrictedPiece}} -->
 - **Description**: [See definition](restrictedPiece.h.driver.md#RestrictedPiece)
 - **Member Functions**:
-    - [`RestrictedPiece::RestrictedPiece`](#RestrictedPieceRestrictedPiece)
-    - [`RestrictedPiece::~RestrictedPiece`](#RestrictedPieceRestrictedPiece)
-    - [`RestrictedPiece::moveTo`](#RestrictedPiecemoveTo)
-    - [`RestrictedPiece::hasMoved`](#RestrictedPiecehasMoved)
+    - [`RestrictedPiece::RestrictedPiece`](#RestrictedPiece::RestrictedPiece)
+    - [`RestrictedPiece::~RestrictedPiece`](#RestrictedPiece::~RestrictedPiece)
+    - [`RestrictedPiece::moveTo`](#RestrictedPiece::moveTo)
+    - [`RestrictedPiece::hasMoved`](#RestrictedPiece::hasMoved)
 - **Inherits from**:
     - `Piece`
 

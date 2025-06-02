@@ -1,7 +1,7 @@
 # Purpose
-The `queen.cpp` file is part of a chess software project, specifically implementing the behavior and characteristics of the Queen piece in a game of chess. This file defines the [`Queen`](#QueenQueen) class, which inherits from a base class `Piece`, indicating that it is part of a larger object-oriented design for representing chess pieces. The primary functionality provided by this file includes the construction and destruction of a [`Queen`](#QueenQueen) object, determining the value of the Queen piece, checking the validity of its moves, and displaying the piece on the board.
+The `queen.cpp` file is part of a chess software project, specifically implementing the behavior and characteristics of the Queen piece in a game of chess. This file defines the [`Queen`](#Queen::Queen) class, which inherits from a base class `Piece`, indicating that it is part of a larger object-oriented design for representing chess pieces. The primary functionality provided by this file includes the construction and destruction of a [`Queen`](#Queen::Queen) object, determining the value of the Queen piece, checking the validity of its moves, and displaying the piece on the board.
 
-The [`Queen`](#QueenQueen) class encapsulates the specific movement rules of a Queen in chess, allowing it to move vertically, horizontally, or diagonally across the board, as long as the path is clear. This is achieved through the [`canMoveTo`](#QueencanMoveTo) method, which utilizes methods from a `Board` class to verify if the path is unobstructed. The [`value`](#Queenvalue) method returns the standard chess value of a Queen, which is 9, reflecting its importance in the game. The [`display`](#Queendisplay) method outputs the Queen's representation, which includes its color and the letter "Q". This file is likely part of a larger system where each chess piece is implemented in a similar manner, contributing to a comprehensive simulation of a chess game.
+The [`Queen`](#Queen::Queen) class encapsulates the specific movement rules of a Queen in chess, allowing it to move vertically, horizontally, or diagonally across the board, as long as the path is clear. This is achieved through the [`canMoveTo`](#Queen::canMoveTo) method, which utilizes methods from a `Board` class to verify if the path is unobstructed. The [`value`](#Queen::value) method returns the standard chess value of a Queen, which is 9, reflecting its importance in the game. The [`display`](#Queen::display) method outputs the Queen's representation, which includes its color and the letter "Q". This file is likely part of a larger system where each chess piece is implemented in a similar manner, contributing to a comprehensive simulation of a chess game.
 # Imports and Dependencies
 
 ---
@@ -14,11 +14,11 @@ The [`Queen`](#QueenQueen) class encapsulates the specific movement rules of a Q
 ### Queen<!-- {{#data_structure:Queen}} -->
 - **Description**: [See definition](queen.h.driver.md#Queen)
 - **Member Functions**:
-    - [`Queen::Queen`](#QueenQueen)
-    - [`Queen::~Queen`](#QueenQueen)
-    - [`Queen::value`](#Queenvalue)
-    - [`Queen::canMoveTo`](#QueencanMoveTo)
-    - [`Queen::display`](#Queendisplay)
+    - [`Queen::Queen`](#Queen::Queen)
+    - [`Queen::~Queen`](#Queen::~Queen)
+    - [`Queen::value`](#Queen::value)
+    - [`Queen::canMoveTo`](#Queen::canMoveTo)
+    - [`Queen::display`](#Queen::display)
 - **Inherits from**:
     - `Piece`
 

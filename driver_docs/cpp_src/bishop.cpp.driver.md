@@ -1,5 +1,5 @@
 # Purpose
-This C++ code defines the implementation of a [`Bishop`](#BishopBishop) class, which is part of a chess game project. The code provides narrow functionality specific to the behavior and characteristics of a bishop piece in chess. It is a C++ source file intended to be compiled as part of a larger chess application, likely alongside other piece classes. The [`Bishop`](#BishopBishop) class inherits from a `Piece` class, indicating a class hierarchy for different chess pieces. It includes methods to determine the bishop's value, check if a move is valid based on diagonal movement, and display the bishop's representation. The code relies on external components such as a `Board` class and a `Square` class, suggesting it is part of a modular design where each piece type has its own implementation file.
+This C++ code defines the implementation of a [`Bishop`](#Bishop::Bishop) class, which is part of a chess game project. The code provides narrow functionality specific to the behavior and characteristics of a bishop piece in chess. It is a C++ source file intended to be compiled as part of a larger chess application, likely alongside other piece classes. The [`Bishop`](#Bishop::Bishop) class inherits from a `Piece` class, indicating a class hierarchy for different chess pieces. It includes methods to determine the bishop's value, check if a move is valid based on diagonal movement, and display the bishop's representation. The code relies on external components such as a `Board` class and a `Square` class, suggesting it is part of a modular design where each piece type has its own implementation file.
 # Imports and Dependencies
 
 ---
@@ -12,11 +12,11 @@ This C++ code defines the implementation of a [`Bishop`](#BishopBishop) class, w
 ### Bishop<!-- {{#data_structure:Bishop}} -->
 - **Description**: [See definition](bishop.h.driver.md#Bishop)
 - **Member Functions**:
-    - [`Bishop::Bishop`](#BishopBishop)
-    - [`Bishop::~Bishop`](#BishopBishop)
-    - [`Bishop::value`](#Bishopvalue)
-    - [`Bishop::canMoveTo`](#BishopcanMoveTo)
-    - [`Bishop::display`](#Bishopdisplay)
+    - [`Bishop::Bishop`](#Bishop::Bishop)
+    - [`Bishop::~Bishop`](#Bishop::~Bishop)
+    - [`Bishop::value`](#Bishop::value)
+    - [`Bishop::canMoveTo`](#Bishop::canMoveTo)
+    - [`Bishop::display`](#Bishop::display)
 - **Inherits from**:
     - `Piece`
 

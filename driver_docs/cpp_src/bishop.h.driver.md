@@ -15,11 +15,11 @@ The provided code is a C++ header file (`bishop.h`) that defines a class represe
 - **Type**: `class`
 - **Description**: The `Bishop` class represents a chess bishop piece in a chess game, inheriting from the `Piece` class. It includes a constructor to initialize the bishop with a specified color, a destructor, and methods to determine the bishop's point value, check if a move to a specific square is legal based on diagonal movement, and display the bishop's representation. The class encapsulates the behavior specific to a bishop piece, such as its movement rules and display format.
 - **Member Functions**:
-    - [`Bishop::Bishop`](bishop.cpp.driver.md#BishopBishop)
-    - [`Bishop::~Bishop`](bishop.cpp.driver.md#BishopBishop)
-    - [`Bishop::value`](bishop.cpp.driver.md#Bishopvalue)
-    - [`Bishop::canMoveTo`](bishop.cpp.driver.md#BishopcanMoveTo)
-    - [`Bishop::display`](bishop.cpp.driver.md#Bishopdisplay)
+    - [`Bishop::Bishop`](bishop.cpp.driver.md#Bishop::Bishop)
+    - [`Bishop::~Bishop`](bishop.cpp.driver.md#Bishop::~Bishop)
+    - [`Bishop::value`](bishop.cpp.driver.md#Bishop::value)
+    - [`Bishop::canMoveTo`](bishop.cpp.driver.md#Bishop::canMoveTo)
+    - [`Bishop::display`](bishop.cpp.driver.md#Bishop::display)
 - **Inherits from**:
     - [`Piece`](piece.h.driver.md#Piece)
 

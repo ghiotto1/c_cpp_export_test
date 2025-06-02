@@ -21,13 +21,13 @@ The `Piece` class interfaces with other components such as `Square`, `Board`, an
     - `_square`: A pointer to the Square object where the piece is currently located.
 - **Description**: The `Piece` class represents a generic game piece in a board game, such as chess. It includes attributes to store the piece's color and its current location on the board. The class provides methods to move the piece, check if a move is legal, and determine the piece's value, among other functionalities. It serves as a base class for specific types of pieces, requiring derived classes to implement certain virtual functions like `value`, `display`, and `canMoveTo`. The class ensures that moves are legal and handles capturing opponent pieces while maintaining the integrity of the game state.
 - **Member Functions**:
-    - [`Piece::Piece`](piece.cpp.driver.md#PiecePiece)
-    - [`Piece::~Piece`](piece.cpp.driver.md#PiecePiece)
-    - [`Piece::moveTo`](piece.cpp.driver.md#PiecemoveTo)
-    - [`Piece::setLocation`](piece.cpp.driver.md#PiecesetLocation)
-    - [`Piece::isWhite`](piece.cpp.driver.md#PieceisWhite)
-    - [`Piece::color`](piece.cpp.driver.md#Piececolor)
-    - [`Piece::isOnSquare`](piece.cpp.driver.md#PieceisOnSquare)
-    - [`Piece::location`](piece.cpp.driver.md#Piecelocation)
+    - [`Piece::Piece`](piece.cpp.driver.md#Piece::Piece)
+    - [`Piece::~Piece`](piece.cpp.driver.md#Piece::~Piece)
+    - [`Piece::moveTo`](piece.cpp.driver.md#Piece::moveTo)
+    - [`Piece::setLocation`](piece.cpp.driver.md#Piece::setLocation)
+    - [`Piece::isWhite`](piece.cpp.driver.md#Piece::isWhite)
+    - [`Piece::color`](piece.cpp.driver.md#Piece::color)
+    - [`Piece::isOnSquare`](piece.cpp.driver.md#Piece::isOnSquare)
+    - [`Piece::location`](piece.cpp.driver.md#Piece::location)
 
 
