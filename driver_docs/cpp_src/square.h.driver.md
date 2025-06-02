@@ -11,12 +11,12 @@ The provided code is a C++ header file (`square.h`) that defines a class `Square
     - `_piece`: Pointer to the Piece object that occupies the square, or NULL if unoccupied.
 - **Description**: The `Square` class represents a single square on a game board, characterized by its X and Y coordinates. It can hold a reference to a `Piece` object, indicating whether the square is occupied. The class provides methods to set and retrieve the piece occupying the square, as well as to check if the square is occupied. It encapsulates the position and occupancy state of a square, making it a fundamental component for board-based games.
 - **Member Functions**:
-    - [`Square::Square`](square.cpp.driver.md#SquareSquare)
-    - [`Square::~Square`](square.cpp.driver.md#SquareSquare)
-    - [`Square::setOccupier`](square.cpp.driver.md#SquaresetOccupier)
-    - [`Square::getX`](square.cpp.driver.md#SquaregetX)
-    - [`Square::getY`](square.cpp.driver.md#SquaregetY)
-    - [`Square::occupied`](square.cpp.driver.md#Squareoccupied)
-    - [`Square::occupiedBy`](square.cpp.driver.md#SquareoccupiedBy)
+    - [`Square::Square`](square.cpp.driver.md#Square::Square)
+    - [`Square::~Square`](square.cpp.driver.md#Square::~Square)
+    - [`Square::setOccupier`](square.cpp.driver.md#Square::setOccupier)
+    - [`Square::getX`](square.cpp.driver.md#Square::getX)
+    - [`Square::getY`](square.cpp.driver.md#Square::getY)
+    - [`Square::occupied`](square.cpp.driver.md#Square::occupied)
+    - [`Square::occupiedBy`](square.cpp.driver.md#Square::occupiedBy)
 
 

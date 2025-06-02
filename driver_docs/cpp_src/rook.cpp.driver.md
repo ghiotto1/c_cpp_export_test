@@ -1,7 +1,7 @@
 # Purpose
-The provided C++ source code file, `rook.cpp`, is part of a larger chess application, as indicated by its inclusion in the "ChessProject". This file specifically implements the behavior and characteristics of the Rook chess piece. The class [`Rook`](#RookRook) inherits from a base class `RestrictedPiece`, which likely encapsulates common functionality for chess pieces with restricted movement patterns. The constructor initializes the Rook with a color, indicating whether it is a white or black piece, and the destructor is defined but does not perform any specific actions, suggesting that no special cleanup is required for this class.
+The provided C++ source code file, `rook.cpp`, is part of a larger chess application, as indicated by its inclusion in the "ChessProject". This file specifically implements the behavior and characteristics of the Rook chess piece. The class [`Rook`](#Rook::Rook) inherits from a base class `RestrictedPiece`, which likely encapsulates common functionality for chess pieces with restricted movement patterns. The constructor initializes the Rook with a color, indicating whether it is a white or black piece, and the destructor is defined but does not perform any specific actions, suggesting that no special cleanup is required for this class.
 
-The [`Rook`](#RookRook) class defines several key methods that encapsulate its functionality. The `value()` method returns an integer value of 5, which is a common convention in chess programming to represent the relative strength of a Rook compared to other pieces. The `canMoveTo()` method determines if the Rook can legally move to a specified `Square` on the chessboard, checking for clear paths either vertically or horizontally, which aligns with the Rook's movement rules in chess. The `display()` method outputs the Rook's representation, which includes its color and the letter "R", to the console. This file is not a standalone executable but rather a component of a larger system, likely intended to be used in conjunction with other chess piece classes and a chessboard management system.
+The [`Rook`](#Rook::Rook) class defines several key methods that encapsulate its functionality. The `value()` method returns an integer value of 5, which is a common convention in chess programming to represent the relative strength of a Rook compared to other pieces. The `canMoveTo()` method determines if the Rook can legally move to a specified `Square` on the chessboard, checking for clear paths either vertically or horizontally, which aligns with the Rook's movement rules in chess. The `display()` method outputs the Rook's representation, which includes its color and the letter "R", to the console. This file is not a standalone executable but rather a component of a larger system, likely intended to be used in conjunction with other chess piece classes and a chessboard management system.
 # Imports and Dependencies
 
 ---
@@ -14,11 +14,11 @@ The [`Rook`](#RookRook) class defines several key methods that encapsulate its f
 ### Rook<!-- {{#data_structure:Rook}} -->
 - **Description**: [See definition](rook.h.driver.md#Rook)
 - **Member Functions**:
-    - [`Rook::Rook`](#RookRook)
-    - [`Rook::~Rook`](#RookRook)
-    - [`Rook::value`](#Rookvalue)
-    - [`Rook::canMoveTo`](#RookcanMoveTo)
-    - [`Rook::display`](#Rookdisplay)
+    - [`Rook::Rook`](#Rook::Rook)
+    - [`Rook::~Rook`](#Rook::~Rook)
+    - [`Rook::value`](#Rook::value)
+    - [`Rook::canMoveTo`](#Rook::canMoveTo)
+    - [`Rook::display`](#Rook::display)
 - **Inherits from**:
     - `RestrictedPiece`
 

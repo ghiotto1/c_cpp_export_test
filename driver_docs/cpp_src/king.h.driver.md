@@ -16,11 +16,11 @@ The `King` class includes methods such as `value()`, which returns the point val
 - **Type**: `class`
 - **Description**: The `King` class represents a chess king piece and inherits from the `RestrictedPiece` class. It includes a constructor to initialize the king with a specified color, a destructor, and several member functions. The `value` function returns the point value of the king, which is set to 0 in this implementation. The `canMoveTo` function determines if the king can legally move to a specified square, allowing moves one square in any direction (forward, backward, sideways, or diagonally). The `display` function outputs the king's representation, which includes its color and the letter 'K'.
 - **Member Functions**:
-    - [`King::King`](king.cpp.driver.md#KingKing)
-    - [`King::~King`](king.cpp.driver.md#KingKing)
-    - [`King::value`](king.cpp.driver.md#Kingvalue)
-    - [`King::canMoveTo`](king.cpp.driver.md#KingcanMoveTo)
-    - [`King::display`](king.cpp.driver.md#Kingdisplay)
+    - [`King::King`](king.cpp.driver.md#King::King)
+    - [`King::~King`](king.cpp.driver.md#King::~King)
+    - [`King::value`](king.cpp.driver.md#King::value)
+    - [`King::canMoveTo`](king.cpp.driver.md#King::canMoveTo)
+    - [`King::display`](king.cpp.driver.md#King::display)
 - **Inherits from**:
     - [`RestrictedPiece`](restrictedPiece.h.driver.md#RestrictedPiece)
 

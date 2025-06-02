@@ -1,7 +1,7 @@
 # Purpose
-The `board.cpp` file is part of a Chess project and is responsible for implementing the [`Board`](#BoardBoard) class, which models the chessboard. This file provides the core functionality for managing the board's state, including the setup and teardown of the board's squares, checking the clarity of paths (vertical, horizontal, and diagonal) between squares, and displaying the board's current state. The [`Board`](#BoardBoard) class uses a singleton pattern, as evidenced by the `getBoard()` method, which ensures that only one instance of the board exists throughout the application. This is achieved by maintaining a static pointer `_theBoard` to the single instance of the [`Board`](#BoardBoard).
+The `board.cpp` file is part of a Chess project and is responsible for implementing the [`Board`](#Board::Board) class, which models the chessboard. This file provides the core functionality for managing the board's state, including the setup and teardown of the board's squares, checking the clarity of paths (vertical, horizontal, and diagonal) between squares, and displaying the board's current state. The [`Board`](#Board::Board) class uses a singleton pattern, as evidenced by the `getBoard()` method, which ensures that only one instance of the board exists throughout the application. This is achieved by maintaining a static pointer `_theBoard` to the single instance of the [`Board`](#Board::Board).
 
-The file includes several key methods that facilitate chess gameplay. The constructor initializes the board by creating a grid of `Square` objects, while the destructor ensures proper memory management by deleting these objects. The [`isClearVertical`](#BoardisClearVertical), [`isClearHorizontal`](#BoardisClearHorizontal), and [`isClearDiagonal`](#BoardisClearDiagonal) methods are crucial for determining if a path between two squares is unobstructed, which is essential for validating moves in chess. The [`isEndRow`](#BoardisEndRow) method checks if a square is in the first or last row, which can be important for pawn promotion. Finally, the [`display`](#Boarddisplay) method outputs the current state of the board to a given output stream, showing the position of pieces and the board's layout. This file is integral to the chess game's functionality, providing both the data structure and the logic needed to manage the board's state and interactions.
+The file includes several key methods that facilitate chess gameplay. The constructor initializes the board by creating a grid of `Square` objects, while the destructor ensures proper memory management by deleting these objects. The [`isClearVertical`](#Board::isClearVertical), [`isClearHorizontal`](#Board::isClearHorizontal), and [`isClearDiagonal`](#Board::isClearDiagonal) methods are crucial for determining if a path between two squares is unobstructed, which is essential for validating moves in chess. The [`isEndRow`](#Board::isEndRow) method checks if a square is in the first or last row, which can be important for pawn promotion. Finally, the [`display`](#Board::display) method outputs the current state of the board to a given output stream, showing the position of pieces and the board's layout. This file is integral to the chess game's functionality, providing both the data structure and the logic needed to manage the board's state and interactions.
 # Imports and Dependencies
 
 ---
@@ -24,15 +24,15 @@ The file includes several key methods that facilitate chess gameplay. The constr
 ### Board<!-- {{#data_structure:Board}} -->
 - **Description**: [See definition](board.h.driver.md#Board)
 - **Member Functions**:
-    - [`Board::Board`](#BoardBoard)
-    - [`Board::~Board`](#BoardBoard)
-    - [`Board::getBoard`](#BoardgetBoard)
-    - [`Board::squareAt`](#BoardsquareAt)
-    - [`Board::isClearVertical`](#BoardisClearVertical)
-    - [`Board::isClearHorizontal`](#BoardisClearHorizontal)
-    - [`Board::isClearDiagonal`](#BoardisClearDiagonal)
-    - [`Board::isEndRow`](#BoardisEndRow)
-    - [`Board::display`](#Boarddisplay)
+    - [`Board::Board`](#Board::Board)
+    - [`Board::~Board`](#Board::~Board)
+    - [`Board::getBoard`](#Board::getBoard)
+    - [`Board::squareAt`](#Board::squareAt)
+    - [`Board::isClearVertical`](#Board::isClearVertical)
+    - [`Board::isClearHorizontal`](#Board::isClearHorizontal)
+    - [`Board::isClearDiagonal`](#Board::isClearDiagonal)
+    - [`Board::isEndRow`](#Board::isEndRow)
+    - [`Board::display`](#Board::display)
 
 **Methods**
 
@@ -104,13 +104,13 @@ The `isClearVertical` function checks if the vertical path between two squares o
     - Assign `start` to the square with the smaller y-value and `end` to the other square.
     - Check if the x-values of `start` and `end` are equal to ensure no horizontal movement; if not, set `valid` to false.
     - If the x-values are equal, iterate over the y-values between `start` and `end`.
-    - For each square in the vertical path, check if it is occupied using the [`squareAt`](#BoardsquareAt) method.
+    - For each square in the vertical path, check if it is occupied using the [`squareAt`](#Board::squareAt) method.
     - If any square is occupied, set `valid` to false.
     - Return the boolean `valid` indicating if the path is clear.
 - **Output**:
     - A boolean value indicating whether the vertical path between the two squares is clear (true) or not (false).
 - **Functions called**:
-    - [`Board::squareAt`](#BoardsquareAt)
+    - [`Board::squareAt`](#Board::squareAt)
 - **See also**: [`Board`](board.h.driver.md#Board)  (Data Structure)
 
 
@@ -129,7 +129,7 @@ The `isClearHorizontal` function checks if the horizontal path between two squar
 - **Output**:
     - A boolean value indicating whether the horizontal path between the two squares is clear (true) or not (false).
 - **Functions called**:
-    - [`Board::squareAt`](#BoardsquareAt)
+    - [`Board::squareAt`](#Board::squareAt)
 - **See also**: [`Board`](board.h.driver.md#Board)  (Data Structure)
 
 
@@ -145,12 +145,12 @@ The `isClearDiagonal` function checks if the path between two squares on a chess
     - Determine the direction of movement in both x and y directions by setting `xDir` and `yDir` to 1 or -1 based on the sign of the translations.
     - Check if the absolute values of the x and y translations are equal; if not, set `valid` to false as the path is not diagonal.
     - If the path is diagonal, iterate over each square along the diagonal path (excluding the starting and ending squares).
-    - For each square along the path, check if it is occupied using the [`squareAt`](#BoardsquareAt) method; if any square is occupied, set `valid` to false.
+    - For each square along the path, check if it is occupied using the [`squareAt`](#Board::squareAt) method; if any square is occupied, set `valid` to false.
     - Return the value of `valid`, indicating whether the diagonal path is clear.
 - **Output**:
     - A boolean value indicating whether the diagonal path between the two squares is clear (true) or blocked (false).
 - **Functions called**:
-    - [`Board::squareAt`](#BoardsquareAt)
+    - [`Board::squareAt`](#Board::squareAt)
 - **See also**: [`Board`](board.h.driver.md#Board)  (Data Structure)
 
 

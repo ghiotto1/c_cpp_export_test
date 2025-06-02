@@ -17,13 +17,13 @@ The provided code is a C++ header file (`pawn.h`) that defines a class represent
     - `_delegate`: A pointer to a Piece object used for delegation when the pawn is promoted.
 - **Description**: The Pawn class represents a pawn piece in a chess game, inheriting from the RestrictedPiece class. It encapsulates the behavior and attributes specific to a pawn, including its movement rules and promotion to a queen when reaching the opponent's end of the board. The class uses a delegate pattern to handle the pawn's behavior after promotion, allowing it to adopt the movement rules of a queen. The Pawn class provides methods to set its location, determine its point value, move to a new square, check if a move is legal, and display itself.
 - **Member Functions**:
-    - [`Pawn::Pawn`](pawn.cpp.driver.md#PawnPawn)
-    - [`Pawn::~Pawn`](pawn.cpp.driver.md#PawnPawn)
-    - [`Pawn::setLocation`](pawn.cpp.driver.md#PawnsetLocation)
-    - [`Pawn::value`](pawn.cpp.driver.md#Pawnvalue)
-    - [`Pawn::moveTo`](pawn.cpp.driver.md#PawnmoveTo)
-    - [`Pawn::canMoveTo`](pawn.cpp.driver.md#PawncanMoveTo)
-    - [`Pawn::display`](pawn.cpp.driver.md#Pawndisplay)
+    - [`Pawn::Pawn`](pawn.cpp.driver.md#Pawn::Pawn)
+    - [`Pawn::~Pawn`](pawn.cpp.driver.md#Pawn::~Pawn)
+    - [`Pawn::setLocation`](pawn.cpp.driver.md#Pawn::setLocation)
+    - [`Pawn::value`](pawn.cpp.driver.md#Pawn::value)
+    - [`Pawn::moveTo`](pawn.cpp.driver.md#Pawn::moveTo)
+    - [`Pawn::canMoveTo`](pawn.cpp.driver.md#Pawn::canMoveTo)
+    - [`Pawn::display`](pawn.cpp.driver.md#Pawn::display)
 - **Inherits from**:
     - [`RestrictedPiece`](restrictedPiece.h.driver.md#RestrictedPiece)
 

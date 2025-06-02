@@ -1,7 +1,7 @@
 # Purpose
-The `king.cpp` file is part of a chess game project, specifically implementing the behavior and characteristics of the King chess piece. This file provides a narrow functionality focused on defining the movement rules and display characteristics of the King piece within the game. The class [`King`](#KingKing) inherits from `RestrictedPiece`, indicating that it is a specialized type of chess piece with specific movement restrictions. The constructor initializes the King with a color attribute, and the destructor is defined but does not perform any specific actions.
+The `king.cpp` file is part of a chess game project, specifically implementing the behavior and characteristics of the King chess piece. This file provides a narrow functionality focused on defining the movement rules and display characteristics of the King piece within the game. The class [`King`](#King::King) inherits from `RestrictedPiece`, indicating that it is a specialized type of chess piece with specific movement restrictions. The constructor initializes the King with a color attribute, and the destructor is defined but does not perform any specific actions.
 
-The most important technical components of this file include the [`canMoveTo`](#KingcanMoveTo) method, which encapsulates the logic for determining valid moves for the King piece. This method checks if the King can move one square in any direction—forward, backward, sideways, or diagonally—consistent with the rules of chess. The [`value`](#Kingvalue) method returns a constant value of 0, which might be used in the context of the game to represent the King's value in terms of gameplay strategy. The [`display`](#Kingdisplay) method outputs the King's representation on the board, using the color attribute to distinguish between white and black pieces. This file is intended to be part of a larger chess application, likely interacting with other components such as the board and other piece classes.
+The most important technical components of this file include the [`canMoveTo`](#King::canMoveTo) method, which encapsulates the logic for determining valid moves for the King piece. This method checks if the King can move one square in any direction—forward, backward, sideways, or diagonally—consistent with the rules of chess. The [`value`](#King::value) method returns a constant value of 0, which might be used in the context of the game to represent the King's value in terms of gameplay strategy. The [`display`](#King::display) method outputs the King's representation on the board, using the color attribute to distinguish between white and black pieces. This file is intended to be part of a larger chess application, likely interacting with other components such as the board and other piece classes.
 # Imports and Dependencies
 
 ---
@@ -14,11 +14,11 @@ The most important technical components of this file include the [`canMoveTo`](#
 ### King<!-- {{#data_structure:King}} -->
 - **Description**: [See definition](king.h.driver.md#King)
 - **Member Functions**:
-    - [`King::King`](#KingKing)
-    - [`King::~King`](#KingKing)
-    - [`King::value`](#Kingvalue)
-    - [`King::canMoveTo`](#KingcanMoveTo)
-    - [`King::display`](#Kingdisplay)
+    - [`King::King`](#King::King)
+    - [`King::~King`](#King::~King)
+    - [`King::value`](#King::value)
+    - [`King::canMoveTo`](#King::canMoveTo)
+    - [`King::display`](#King::display)
 - **Inherits from**:
     - `RestrictedPiece`
 

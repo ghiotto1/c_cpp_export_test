@@ -1,5 +1,5 @@
 # Purpose
-The provided code is a C++ source file, likely part of a larger chess application, that defines the implementation of a [`Square`](#SquareSquare) class. This class offers narrow functionality, specifically managing the state of a square on a chessboard, including its coordinates and the piece occupying it. The class constructor initializes the square's position and sets the occupying piece to `NULL`, while the destructor is defined but does not perform any specific actions. The class provides methods to set and retrieve the piece occupying the square, check if the square is occupied, and access the square's coordinates. This file is intended to be compiled and linked with other parts of the ChessProject, as it includes headers for dependencies like `piece.h` and `square.h`.
+The provided code is a C++ source file, likely part of a larger chess application, that defines the implementation of a [`Square`](#Square::Square) class. This class offers narrow functionality, specifically managing the state of a square on a chessboard, including its coordinates and the piece occupying it. The class constructor initializes the square's position and sets the occupying piece to `NULL`, while the destructor is defined but does not perform any specific actions. The class provides methods to set and retrieve the piece occupying the square, check if the square is occupied, and access the square's coordinates. This file is intended to be compiled and linked with other parts of the ChessProject, as it includes headers for dependencies like `piece.h` and `square.h`.
 # Imports and Dependencies
 
 ---
@@ -13,13 +13,13 @@ The provided code is a C++ source file, likely part of a larger chess applicatio
 ### Square<!-- {{#data_structure:Square}} -->
 - **Description**: [See definition](square.h.driver.md#Square)
 - **Member Functions**:
-    - [`Square::Square`](#SquareSquare)
-    - [`Square::~Square`](#SquareSquare)
-    - [`Square::setOccupier`](#SquaresetOccupier)
-    - [`Square::getX`](#SquaregetX)
-    - [`Square::getY`](#SquaregetY)
-    - [`Square::occupied`](#Squareoccupied)
-    - [`Square::occupiedBy`](#SquareoccupiedBy)
+    - [`Square::Square`](#Square::Square)
+    - [`Square::~Square`](#Square::~Square)
+    - [`Square::setOccupier`](#Square::setOccupier)
+    - [`Square::getX`](#Square::getX)
+    - [`Square::getY`](#Square::getY)
+    - [`Square::occupied`](#Square::occupied)
+    - [`Square::occupiedBy`](#Square::occupiedBy)
 
 **Methods**
 

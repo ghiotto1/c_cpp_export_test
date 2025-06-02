@@ -25,10 +25,10 @@ The `Game` class is structured to be used as a singleton, as suggested by its st
     - `blackPieces`: A static set containing pointers to all the black pieces in the game.
 - **Description**: The `Game` class represents a game of chess, managing the players and their respective pieces. It includes static methods to initialize the game, determine the next player, and find the opponent of a given player. The class maintains static attributes for the two players, the next player to move, and sets of pieces for both white and black sides. The destructor ensures proper cleanup of dynamically allocated pieces and players.
 - **Member Functions**:
-    - [`Game::Game`](game.cpp.driver.md#GameGame)
-    - [`Game::~Game`](game.cpp.driver.md#GameGame)
-    - [`Game::initialize`](game.cpp.driver.md#Gameinitialize)
-    - [`Game::getNextPlayer`](game.cpp.driver.md#GamegetNextPlayer)
-    - [`Game::opponentOf`](game.cpp.driver.md#GameopponentOf)
+    - [`Game::Game`](game.cpp.driver.md#Game::Game)
+    - [`Game::~Game`](game.cpp.driver.md#Game::~Game)
+    - [`Game::initialize`](game.cpp.driver.md#Game::initialize)
+    - [`Game::getNextPlayer`](game.cpp.driver.md#Game::getNextPlayer)
+    - [`Game::opponentOf`](game.cpp.driver.md#Game::opponentOf)
 
 

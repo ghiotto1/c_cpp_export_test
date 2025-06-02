@@ -1,7 +1,7 @@
 # Purpose
-The provided C++ source file, `piece.cpp`, is part of a larger chess application, as indicated by its inclusion in the "ChessProject". This file implements the [`Piece`](#PiecePiece) class, which represents a chess piece in the game. The class provides functionality to manage the piece's color, location, and movement on the chessboard. The constructor initializes the piece's color based on whether it is white or black, and the destructor is defined but does not perform any specific actions. The [`moveTo`](#PiecemoveTo) method is a critical component of this class, handling the logic for moving a piece from one square to another, including capturing opponent pieces and ensuring that moves do not leave the player's king in check. This method encapsulates the rules of chess regarding piece movement and captures, making it a central part of the game's mechanics.
+The provided C++ source file, `piece.cpp`, is part of a larger chess application, as indicated by its inclusion in the "ChessProject". This file implements the [`Piece`](#Piece::Piece) class, which represents a chess piece in the game. The class provides functionality to manage the piece's color, location, and movement on the chessboard. The constructor initializes the piece's color based on whether it is white or black, and the destructor is defined but does not perform any specific actions. The [`moveTo`](#Piece::moveTo) method is a critical component of this class, handling the logic for moving a piece from one square to another, including capturing opponent pieces and ensuring that moves do not leave the player's king in check. This method encapsulates the rules of chess regarding piece movement and captures, making it a central part of the game's mechanics.
 
-The [`Piece`](#PiecePiece) class also includes several utility methods, such as [`setLocation`](#PiecesetLocation), [`isWhite`](#PieceisWhite), [`color`](#Piececolor), [`isOnSquare`](#PieceisOnSquare), and [`location`](#Piecelocation), which provide access to the piece's attributes and state. These methods facilitate interaction with the piece's properties, such as determining its color, checking its current position, and updating its location on the board. The file imports two headers, `piece.h` and `player.h`, suggesting that it relies on definitions from these files, likely for the [`Piece`](#PiecePiece) and `Player` classes, respectively. Overall, `piece.cpp` is a focused implementation that provides essential functionality for managing chess pieces within the broader context of a chess game application.
+The [`Piece`](#Piece::Piece) class also includes several utility methods, such as [`setLocation`](#Piece::setLocation), [`isWhite`](#Piece::isWhite), [`color`](#Piece::color), [`isOnSquare`](#Piece::isOnSquare), and [`location`](#Piece::location), which provide access to the piece's attributes and state. These methods facilitate interaction with the piece's properties, such as determining its color, checking its current position, and updating its location on the board. The file imports two headers, `piece.h` and `player.h`, suggesting that it relies on definitions from these files, likely for the [`Piece`](#Piece::Piece) and `Player` classes, respectively. Overall, `piece.cpp` is a focused implementation that provides essential functionality for managing chess pieces within the broader context of a chess game application.
 # Imports and Dependencies
 
 ---
@@ -16,14 +16,14 @@ The [`Piece`](#PiecePiece) class also includes several utility methods, such as 
 ### Piece<!-- {{#data_structure:Piece}} -->
 - **Description**: [See definition](piece.h.driver.md#Piece)
 - **Member Functions**:
-    - [`Piece::Piece`](#PiecePiece)
-    - [`Piece::~Piece`](#PiecePiece)
-    - [`Piece::moveTo`](#PiecemoveTo)
-    - [`Piece::setLocation`](#PiecesetLocation)
-    - [`Piece::isWhite`](#PieceisWhite)
-    - [`Piece::color`](#Piececolor)
-    - [`Piece::isOnSquare`](#PieceisOnSquare)
-    - [`Piece::location`](#Piecelocation)
+    - [`Piece::Piece`](#Piece::Piece)
+    - [`Piece::~Piece`](#Piece::~Piece)
+    - [`Piece::moveTo`](#Piece::moveTo)
+    - [`Piece::setLocation`](#Piece::setLocation)
+    - [`Piece::isWhite`](#Piece::isWhite)
+    - [`Piece::color`](#Piece::color)
+    - [`Piece::isOnSquare`](#Piece::isOnSquare)
+    - [`Piece::location`](#Piece::location)
 
 **Methods**
 

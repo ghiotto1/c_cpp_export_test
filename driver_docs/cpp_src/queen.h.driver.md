@@ -15,11 +15,11 @@ The provided code is a C++ header file (`queen.h`) that defines a class represen
 - **Type**: `class`
 - **Description**: The `Queen` class represents a chess queen piece and inherits from the `Piece` class. It encapsulates the behavior and characteristics of a queen in a chess game, including its color, point value, and movement capabilities. The class provides methods to determine the point value of the queen, check if a move to a specific square is legal based on chess rules, and display the queen on the board. The queen can move vertically, horizontally, or diagonally as long as the path is clear, reflecting its powerful and versatile movement in chess.
 - **Member Functions**:
-    - [`Queen::Queen`](queen.cpp.driver.md#QueenQueen)
-    - [`Queen::~Queen`](queen.cpp.driver.md#QueenQueen)
-    - [`Queen::value`](queen.cpp.driver.md#Queenvalue)
-    - [`Queen::canMoveTo`](queen.cpp.driver.md#QueencanMoveTo)
-    - [`Queen::display`](queen.cpp.driver.md#Queendisplay)
+    - [`Queen::Queen`](queen.cpp.driver.md#Queen::Queen)
+    - [`Queen::~Queen`](queen.cpp.driver.md#Queen::~Queen)
+    - [`Queen::value`](queen.cpp.driver.md#Queen::value)
+    - [`Queen::canMoveTo`](queen.cpp.driver.md#Queen::canMoveTo)
+    - [`Queen::display`](queen.cpp.driver.md#Queen::display)
 - **Inherits from**:
     - [`Piece`](piece.h.driver.md#Piece)
 

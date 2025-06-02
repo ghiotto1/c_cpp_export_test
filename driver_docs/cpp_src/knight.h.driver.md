@@ -15,11 +15,11 @@ The provided code is a C++ header file (`knight.h`) that defines a class represe
 - **Type**: `class`
 - **Description**: The `Knight` class represents a chess knight piece and inherits from the `Piece` class. It includes a constructor to initialize the knight with a specified color, a destructor, and several member functions. The `value` function returns the point value of the knight, which is 3. The `canMoveTo` function determines if the knight can legally move to a given square based on the unique L-shaped movement pattern of a knight in chess. The `display` function outputs the knight's representation, which includes its color and the letter 'N' for knight.
 - **Member Functions**:
-    - [`Knight::Knight`](knight.cpp.driver.md#KnightKnight)
-    - [`Knight::~Knight`](knight.cpp.driver.md#KnightKnight)
-    - [`Knight::value`](knight.cpp.driver.md#Knightvalue)
-    - [`Knight::canMoveTo`](knight.cpp.driver.md#KnightcanMoveTo)
-    - [`Knight::display`](knight.cpp.driver.md#Knightdisplay)
+    - [`Knight::Knight`](knight.cpp.driver.md#Knight::Knight)
+    - [`Knight::~Knight`](knight.cpp.driver.md#Knight::~Knight)
+    - [`Knight::value`](knight.cpp.driver.md#Knight::value)
+    - [`Knight::canMoveTo`](knight.cpp.driver.md#Knight::canMoveTo)
+    - [`Knight::display`](knight.cpp.driver.md#Knight::display)
 - **Inherits from**:
     - [`Piece`](piece.h.driver.md#Piece)
 

@@ -1,7 +1,7 @@
 # Purpose
-The `game.cpp` file is a core component of a chess application, specifically responsible for managing the overall game state and the interactions between players and pieces on the board. This file defines the [`Game`](#GameGame) class, which encapsulates the initialization and management of chess pieces and players. The [`Game`](#GameGame) class constructor and destructor handle the creation and cleanup of game resources, such as dynamically allocated chess pieces and player objects. The [`initialize`](#Gameinitialize) method sets up the chessboard by placing all pieces in their starting positions and associating them with their respective players, ensuring that the game is ready to begin.
+The `game.cpp` file is a core component of a chess application, specifically responsible for managing the overall game state and the interactions between players and pieces on the board. This file defines the [`Game`](#Game::Game) class, which encapsulates the initialization and management of chess pieces and players. The [`Game`](#Game::Game) class constructor and destructor handle the creation and cleanup of game resources, such as dynamically allocated chess pieces and player objects. The [`initialize`](#Game::initialize) method sets up the chessboard by placing all pieces in their starting positions and associating them with their respective players, ensuring that the game is ready to begin.
 
-The file includes several headers for different chess piece types, such as `queen.h`, `bishop.h`, `knight.h`, `rook.h`, `pawn.h`, and `king.h`, indicating that it relies on these classes to represent the various chess pieces. The [`Game`](#GameGame) class also manages the turn-based logic of the game through methods like [`getNextPlayer`](#GamegetNextPlayer) and [`opponentOf`](#GameopponentOf), which determine the current and opposing players. The use of static member variables for players and piece collections suggests that the [`Game`](#GameGame) class maintains a single instance of the game state, which is shared across the application. Overall, this file provides a focused implementation of the chess game's core mechanics, serving as a central point for game initialization and player management.
+The file includes several headers for different chess piece types, such as `queen.h`, `bishop.h`, `knight.h`, `rook.h`, `pawn.h`, and `king.h`, indicating that it relies on these classes to represent the various chess pieces. The [`Game`](#Game::Game) class also manages the turn-based logic of the game through methods like [`getNextPlayer`](#Game::getNextPlayer) and [`opponentOf`](#Game::opponentOf), which determine the current and opposing players. The use of static member variables for players and piece collections suggests that the [`Game`](#Game::Game) class maintains a single instance of the game state, which is shared across the application. Overall, this file provides a focused implementation of the chess game's core mechanics, serving as a central point for game initialization and player management.
 # Imports and Dependencies
 
 ---
@@ -44,11 +44,11 @@ The file includes several headers for different chess piece types, such as `quee
 ### Game<!-- {{#data_structure:Game}} -->
 - **Description**: [See definition](game.h.driver.md#Game)
 - **Member Functions**:
-    - [`Game::Game`](#GameGame)
-    - [`Game::~Game`](#GameGame)
-    - [`Game::initialize`](#Gameinitialize)
-    - [`Game::getNextPlayer`](#GamegetNextPlayer)
-    - [`Game::opponentOf`](#GameopponentOf)
+    - [`Game::Game`](#Game::Game)
+    - [`Game::~Game`](#Game::~Game)
+    - [`Game::initialize`](#Game::initialize)
+    - [`Game::getNextPlayer`](#Game::getNextPlayer)
+    - [`Game::opponentOf`](#Game::opponentOf)
 
 **Methods**
 
@@ -104,13 +104,13 @@ The `getNextPlayer` function updates and returns the player whose turn is next i
 - **Inputs**:
     - None
 - **Control Flow**:
-    - The function calls [`opponentOf`](#GameopponentOf) with the current `nextPlayer` to determine the opponent player.
-    - The `nextPlayer` is updated to the opponent player returned by [`opponentOf`](#GameopponentOf).
+    - The function calls [`opponentOf`](#Game::opponentOf) with the current `nextPlayer` to determine the opponent player.
+    - The `nextPlayer` is updated to the opponent player returned by [`opponentOf`](#Game::opponentOf).
     - The updated `nextPlayer` is returned.
 - **Output**:
     - The function returns a pointer to the `Player` object representing the next player whose turn it is.
 - **Functions called**:
-    - [`Game::opponentOf`](#GameopponentOf)
+    - [`Game::opponentOf`](#Game::opponentOf)
 - **See also**: [`Game`](game.h.driver.md#Game)  (Data Structure)
 
 

@@ -23,15 +23,15 @@ The `Player` class is designed to be a part of a larger chess game system, as in
     - `_myKing`: References the player's king piece.
 - **Description**: The `Player` class represents a chess player in a game, encapsulating the player's name, color (white or black), and the pieces they control. It provides functionality to make moves, check if the player is in check, capture opponent pieces, and calculate the score based on captured pieces. The class maintains references to the player's king and the set of pieces they control, as well as a set of captured pieces. This structure is essential for managing the state and actions of a player within a chess game.
 - **Member Functions**:
-    - [`Player::Player`](player.cpp.driver.md#PlayerPlayer)
-    - [`Player::~Player`](player.cpp.driver.md#PlayerPlayer)
-    - [`Player::makeMove`](player.cpp.driver.md#PlayermakeMove)
-    - [`Player::inCheck`](player.cpp.driver.md#PlayerinCheck)
-    - [`Player::capture`](player.cpp.driver.md#Playercapture)
-    - [`Player::getName`](player.cpp.driver.md#PlayergetName)
-    - [`Player::isWhite`](player.cpp.driver.md#PlayerisWhite)
-    - [`Player::score`](player.cpp.driver.md#Playerscore)
-    - [`Player::myPieces`](player.cpp.driver.md#PlayermyPieces)
-    - [`Player::myKing`](player.cpp.driver.md#PlayermyKing)
+    - [`Player::Player`](player.cpp.driver.md#Player::Player)
+    - [`Player::~Player`](player.cpp.driver.md#Player::~Player)
+    - [`Player::makeMove`](player.cpp.driver.md#Player::makeMove)
+    - [`Player::inCheck`](player.cpp.driver.md#Player::inCheck)
+    - [`Player::capture`](player.cpp.driver.md#Player::capture)
+    - [`Player::getName`](player.cpp.driver.md#Player::getName)
+    - [`Player::isWhite`](player.cpp.driver.md#Player::isWhite)
+    - [`Player::score`](player.cpp.driver.md#Player::score)
+    - [`Player::myPieces`](player.cpp.driver.md#Player::myPieces)
+    - [`Player::myKing`](player.cpp.driver.md#Player::myKing)
 
 

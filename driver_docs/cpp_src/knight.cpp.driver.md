@@ -1,7 +1,7 @@
 # Purpose
-The provided C++ source code file, `knight.cpp`, is part of a larger project, likely a chess game, as indicated by the file name and the project name `ChessProject`. This file specifically implements the behavior of the Knight piece in a chess game. It defines the [`Knight`](#KnightKnight) class, which inherits from a base class `Piece`, suggesting a class hierarchy where different chess pieces share common functionality. The [`Knight`](#KnightKnight) class constructor initializes the piece with a color, and the destructor is defined but does not perform any specific actions, which is typical when no dynamic memory or resources need to be released.
+The provided C++ source code file, `knight.cpp`, is part of a larger project, likely a chess game, as indicated by the file name and the project name `ChessProject`. This file specifically implements the behavior of the Knight piece in a chess game. It defines the [`Knight`](#Knight::Knight) class, which inherits from a base class `Piece`, suggesting a class hierarchy where different chess pieces share common functionality. The [`Knight`](#Knight::Knight) class constructor initializes the piece with a color, and the destructor is defined but does not perform any specific actions, which is typical when no dynamic memory or resources need to be released.
 
-The [`Knight`](#KnightKnight) class provides several key functionalities. The `value()` method returns the integer value `3`, which is a common convention in chess programming to represent the relative strength of a Knight. The `canMoveTo(Square& location)` method implements the unique movement logic of the Knight, which can move in an "L" shape: two squares in one direction and one square perpendicular, or vice versa. This method checks the validity of a move based on these rules. The `display()` method outputs the Knight's representation, which includes its color and the letter "N", typically used to denote a Knight in chess notation. This file is likely part of a broader collection of files, each implementing different chess pieces, and it does not define a public API or external interface, as it is intended to be used internally within the chess game application.
+The [`Knight`](#Knight::Knight) class provides several key functionalities. The `value()` method returns the integer value `3`, which is a common convention in chess programming to represent the relative strength of a Knight. The `canMoveTo(Square& location)` method implements the unique movement logic of the Knight, which can move in an "L" shape: two squares in one direction and one square perpendicular, or vice versa. This method checks the validity of a move based on these rules. The `display()` method outputs the Knight's representation, which includes its color and the letter "N", typically used to denote a Knight in chess notation. This file is likely part of a broader collection of files, each implementing different chess pieces, and it does not define a public API or external interface, as it is intended to be used internally within the chess game application.
 # Imports and Dependencies
 
 ---
@@ -14,11 +14,11 @@ The [`Knight`](#KnightKnight) class provides several key functionalities. The `v
 ### Knight<!-- {{#data_structure:Knight}} -->
 - **Description**: [See definition](knight.h.driver.md#Knight)
 - **Member Functions**:
-    - [`Knight::Knight`](#KnightKnight)
-    - [`Knight::~Knight`](#KnightKnight)
-    - [`Knight::value`](#Knightvalue)
-    - [`Knight::canMoveTo`](#KnightcanMoveTo)
-    - [`Knight::display`](#Knightdisplay)
+    - [`Knight::Knight`](#Knight::Knight)
+    - [`Knight::~Knight`](#Knight::~Knight)
+    - [`Knight::value`](#Knight::value)
+    - [`Knight::canMoveTo`](#Knight::canMoveTo)
+    - [`Knight::display`](#Knight::display)
 - **Inherits from**:
     - `Piece`
 
