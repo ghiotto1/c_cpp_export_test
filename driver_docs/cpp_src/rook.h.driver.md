@@ -1,7 +1,5 @@
 # Purpose
-The provided code is a C++ header file, `rook.h`, which defines the interface for a `Rook` class, representing a rook piece in a chess game. This class inherits from `RestrictedPiece`, suggesting that it is part of a larger chess game framework where different types of chess pieces are implemented as subclasses of a more general piece class. The `Rook` class encapsulates the behavior and characteristics specific to a rook, such as its point value and movement capabilities on a chessboard.
-
-The `Rook` class includes several public member functions that define its core functionality. The constructor `Rook(bool isWhite)` initializes a rook with a specified color, while the destructor `~Rook()` handles any necessary cleanup. The `value()` function returns the point value of the rook, which is a standard feature in chess to evaluate the strength of a piece. The `canMoveTo(Square& location)` function determines if a move to a specified square is legal, adhering to the rook's movement rules in chess. Lastly, the `display()` function outputs a representation of the rook, likely for visualization purposes in a console-based or graphical chess application. This header file is intended to be included in other parts of the program where the `Rook` class functionality is required, and it defines a clear public API for interacting with rook objects.
+The provided code is a C++ header file (`rook.h`) that defines the interface for a `Rook` class, which represents a rook chess piece. This code offers narrow functionality, specifically tailored to encapsulate the behavior and characteristics of a rook within a chess game. The `Rook` class inherits from a `RestrictedPiece` class, suggesting that it shares common functionality with other restricted chess pieces, likely implementing specific movement rules. The class includes a constructor to initialize the rook's color, a destructor, and several member functions: `value()` to return the rook's point value, `canMoveTo()` to determine if a move to a specified square is legal, and `display()` to output the rook's representation. This header file is intended to be included in other C++ source files where the `Rook` class functionality is required.
 # Imports and Dependencies
 
 ---
@@ -22,7 +20,7 @@ The `Rook` class includes several public member functions that define its core f
     - [`Rook::value`](rook.cpp.driver.md#Rookvalue)
     - [`Rook::canMoveTo`](rook.cpp.driver.md#RookcanMoveTo)
     - [`Rook::display`](rook.cpp.driver.md#Rookdisplay)
-- **Inherits from**:
+- **Inherits From**:
     - [`RestrictedPiece`](restrictedPiece.h.driver.md#RestrictedPiece)
 
 

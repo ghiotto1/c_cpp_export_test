@@ -1,5 +1,5 @@
 # Purpose
-The provided code is a C++ header file (`queen.h`) that defines a class representing a chess queen piece, offering narrow functionality specific to chess game logic. This class, `Queen`, inherits from a base class `Piece`, suggesting a broader chess game framework where different pieces share common characteristics. The header file declares several member functions: a constructor to initialize the queen with a color, a destructor, a method to return the queen's point value, a method to check if a move to a specified square is legal, and a method to display the piece. This file is intended to be included in other parts of a chess application, where the implementation of these methods would be defined, likely in a corresponding `.cpp` file.
+The provided code is a C++ header file (`queen.h`) that defines a class representing a chess queen piece, offering narrow functionality specific to chess game logic. This class, `Queen`, inherits from a base class `Piece`, suggesting a broader chess game framework where different pieces share common characteristics. The class includes a constructor to initialize a queen with a specified color, a destructor, and several member functions: `value()` to return the point value of the queen, `canMoveTo()` to determine if a move to a specified square is legal, and `display()` to output the queen's representation. The header file is intended to be included in other parts of a chess application, likely alongside implementations in corresponding source files.
 # Imports and Dependencies
 
 ---
@@ -13,14 +13,14 @@ The provided code is a C++ header file (`queen.h`) that defines a class represen
 ---
 ### Queen<!-- {{#data_structure:Queen}} -->
 - **Type**: `class`
-- **Description**: The `Queen` class represents a chess queen piece and inherits from the `Piece` class. It encapsulates the behavior and characteristics of a queen in a chess game, including its color, point value, and movement capabilities. The class provides methods to determine the point value of the queen, check if a move to a specific square is legal based on chess rules, and display the queen on the board. The queen can move vertically, horizontally, or diagonally as long as the path is clear, reflecting its powerful and versatile movement in chess.
+- **Description**: The `Queen` class represents a chess queen piece in a chess game, inheriting from the `Piece` class. It encapsulates the behavior and characteristics of a queen, including its ability to move vertically, horizontally, or diagonally across the board, as determined by the `canMoveTo` method. The class also provides a method to retrieve the point value of the queen, which is 9, and a method to display the queen on the board. The constructor initializes the queen with a specified color, and the class includes a destructor for cleanup.
 - **Member Functions**:
     - [`Queen::Queen`](queen.cpp.driver.md#QueenQueen)
     - [`Queen::~Queen`](queen.cpp.driver.md#QueenQueen)
     - [`Queen::value`](queen.cpp.driver.md#Queenvalue)
     - [`Queen::canMoveTo`](queen.cpp.driver.md#QueencanMoveTo)
     - [`Queen::display`](queen.cpp.driver.md#Queendisplay)
-- **Inherits from**:
-    - [`Piece`](piece.h.driver.md#Piece)
+- **Inherits From**:
+    - `Piece`
 
 

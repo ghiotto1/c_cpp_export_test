@@ -1,5 +1,5 @@
 # Purpose
-The provided code is a C++ header file (`bishop.h`) that defines a class representing a chess bishop piece, indicating narrow functionality specific to chess game logic. This class, `Bishop`, inherits from a base class `Piece`, suggesting it is part of a larger chess application or library. The class includes a constructor to initialize the bishop with a color, a destructor, and several member functions: `value()` to return the bishop's point value, `canMoveTo()` to determine if a move to a specified square is legal, and `display()` to output the bishop's representation. The inclusion of other headers like `piece.h` and `square.h` implies dependencies on other components of the chess game, such as the general piece behavior and board squares.
+The provided code is a C++ header file, `bishop.h`, which defines a class representing a chess bishop piece. This class, `Bishop`, inherits from a base class `Piece`, suggesting a broader chess game application where different chess pieces are modeled as classes. The functionality of this code is relatively narrow, focusing specifically on the behavior and characteristics of a bishop in a chess game. It includes methods for creating a bishop with a specified color, determining its point value, checking if a move to a given square is legal, and displaying the piece. This header file is intended to be included in other parts of a chess program, where the implementation details of these methods would be defined, likely in a corresponding `.cpp` file.
 # Imports and Dependencies
 
 ---
@@ -13,14 +13,14 @@ The provided code is a C++ header file (`bishop.h`) that defines a class represe
 ---
 ### Bishop<!-- {{#data_structure:Bishop}} -->
 - **Type**: `class`
-- **Description**: The `Bishop` class represents a chess bishop piece in a chess game, inheriting from the `Piece` class. It includes a constructor to initialize the bishop with a specified color, a destructor, and methods to determine the bishop's point value, check if a move to a specific square is legal based on diagonal movement, and display the bishop's representation. The class encapsulates the behavior specific to a bishop piece, such as its movement rules and display format.
+- **Description**: The `Bishop` class represents a chess bishop piece in a chess game, inheriting from the `Piece` class. It includes a constructor to initialize the bishop with a color, a destructor, and methods to get the point value of the bishop, determine if a move to a given square is legal based on diagonal movement, and display the bishop on the board. The bishop's value is set to 3, and it can move diagonally across the board if the path is clear.
 - **Member Functions**:
     - [`Bishop::Bishop`](bishop.cpp.driver.md#BishopBishop)
     - [`Bishop::~Bishop`](bishop.cpp.driver.md#BishopBishop)
     - [`Bishop::value`](bishop.cpp.driver.md#Bishopvalue)
     - [`Bishop::canMoveTo`](bishop.cpp.driver.md#BishopcanMoveTo)
     - [`Bishop::display`](bishop.cpp.driver.md#Bishopdisplay)
-- **Inherits from**:
-    - [`Piece`](piece.h.driver.md#Piece)
+- **Inherits From**:
+    - `Piece`
 
 
