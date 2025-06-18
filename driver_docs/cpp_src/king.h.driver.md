@@ -1,7 +1,5 @@
 # Purpose
-The provided code is a C++ header file, `king.h`, which defines a class representing a chess king piece. This class, `King`, inherits from a base class `RestrictedPiece`, suggesting that it is part of a larger chess game application where different types of chess pieces are modeled. The `King` class encapsulates the behavior and characteristics specific to a king piece in chess, such as its ability to move and its point value. The class provides a constructor to initialize a king piece with a specified color, a destructor, and several member functions that define its functionality.
-
-The `King` class includes methods such as `value()`, which returns the point value of the king piece, and `canMoveTo(Square& location)`, which determines if the king can legally move to a specified square on the chessboard. Additionally, the `display()` method is provided to output the representation of the king piece, likely for visualization purposes in the game. This header file is intended to be included in other parts of the application, where the functionality of the king piece is required, and it defines a public API for interacting with king objects within the chess game.
+The provided code is a C++ header file (`king.h`) that defines a class representing a chess king piece, which is part of a broader chess game application. This class, `King`, inherits from a base class `RestrictedPiece`, suggesting it shares common functionality with other restricted chess pieces, such as the queen or bishop. The class offers narrow functionality specific to the king piece, including methods to determine its point value, check if a move is legal, and display the piece. The constructor initializes the king with a specified color, and the destructor is defined but not explicitly implemented in this header. This file is intended to be included in other parts of the application where the king's behavior and properties are needed.
 # Imports and Dependencies
 
 ---
@@ -14,14 +12,14 @@ The `King` class includes methods such as `value()`, which returns the point val
 ---
 ### King<!-- {{#data_structure:King}} -->
 - **Type**: `class`
-- **Description**: The `King` class represents a chess king piece and inherits from the `RestrictedPiece` class. It includes a constructor to initialize the king with a specified color, a destructor, and several member functions. The `value` function returns the point value of the king, which is set to 0 in this implementation. The `canMoveTo` function determines if the king can legally move to a specified square, allowing moves one square in any direction (forward, backward, sideways, or diagonally). The `display` function outputs the king's representation, which includes its color and the letter 'K'.
+- **Description**: The `King` class represents a chess king piece and inherits from the `RestrictedPiece` class. It includes a constructor to initialize the king with a specified color, a destructor, and methods to determine the point value of the king, check if a move to a specific square is legal, and display the king on an output stream. The king can move one square in any direction, which is implemented in the `canMoveTo` method.
 - **Member Functions**:
     - [`King::King`](king.cpp.driver.md#KingKing)
     - [`King::~King`](king.cpp.driver.md#KingKing)
     - [`King::value`](king.cpp.driver.md#Kingvalue)
     - [`King::canMoveTo`](king.cpp.driver.md#KingcanMoveTo)
     - [`King::display`](king.cpp.driver.md#Kingdisplay)
-- **Inherits from**:
+- **Inherits From**:
     - [`RestrictedPiece`](restrictedPiece.h.driver.md#RestrictedPiece)
 
 
