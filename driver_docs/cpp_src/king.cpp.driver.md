@@ -1,7 +1,5 @@
 # Purpose
-The `king.cpp` file is part of a chess game project, specifically implementing the behavior and characteristics of the King chess piece. This file provides a narrow functionality focused on defining the movement rules and display characteristics of the King piece within the game. The class [`King`](#KingKing) inherits from `RestrictedPiece`, indicating that it is a specialized type of chess piece with specific movement restrictions. The constructor initializes the King with a color attribute, and the destructor is defined but does not perform any specific actions.
-
-The most important technical components of this file include the [`canMoveTo`](#KingcanMoveTo) method, which encapsulates the logic for determining valid moves for the King piece. This method checks if the King can move one square in any direction—forward, backward, sideways, or diagonally—consistent with the rules of chess. The [`value`](#Kingvalue) method returns a constant value of 0, which might be used in the context of the game to represent the King's value in terms of gameplay strategy. The [`display`](#Kingdisplay) method outputs the King's representation on the board, using the color attribute to distinguish between white and black pieces. This file is intended to be part of a larger chess application, likely interacting with other components such as the board and other piece classes.
+The provided code is a C++ source file, `king.cpp`, which is part of a larger chess project. It defines the implementation of the [`King`](#KingKing) class, which inherits from a `RestrictedPiece` class, likely representing a chess piece with limited movement capabilities. The [`King`](#KingKing) class constructor initializes the piece's color, and the destructor is defined but does not perform any specific actions. The [`value`](#Kingvalue) method returns a constant integer, possibly indicating the king's value in the game, though it is set to zero, which might imply a special status rather than a point value. The [`canMoveTo`](#KingcanMoveTo) method implements the king's movement logic, allowing it to move one square in any direction (forward, backward, sideways, or diagonally), adhering to standard chess rules. Finally, the [`display`](#Kingdisplay) method outputs the king's representation, combining its color and the letter "K" to the console, which is useful for visualizing the board state. This code provides narrow functionality specific to the behavior and representation of a king piece in a chess game.
 # Imports and Dependencies
 
 ---
@@ -19,45 +17,41 @@ The most important technical components of this file include the [`canMoveTo`](#
     - [`King::value`](#Kingvalue)
     - [`King::canMoveTo`](#KingcanMoveTo)
     - [`King::display`](#Kingdisplay)
-- **Inherits from**:
+- **Inherits From**:
     - `RestrictedPiece`
 
 **Methods**
 
 ---
 #### King::King<!-- {{#callable:King::King}} -->
-The King constructor initializes a King object by calling the constructor of its parent class, RestrictedPiece, with a boolean indicating the piece's color.
+The `King` constructor initializes a `King` object by calling the constructor of its parent class `RestrictedPiece` with a boolean indicating the piece's color.
 - **Inputs**:
-    - `isWhite`: A boolean value indicating whether the King piece is white (true) or black (false).
+    - `isWhite`: A boolean indicating whether the King piece is white (true) or black (false).
 - **Control Flow**:
-    - The constructor takes a boolean parameter 'isWhite'.
-    - It calls the constructor of the parent class, RestrictedPiece, passing 'isWhite' to it.
-- **Output**:
-    - There is no return value as this is a constructor for the King class.
+    - The constructor `King::King(bool isWhite)` is called with a boolean parameter `isWhite`.
+    - The constructor initializes the `King` object by invoking the constructor of its parent class `RestrictedPiece` with the `isWhite` parameter.
+- **Output**: There is no return value as this is a constructor for the `King` class.
 - **See also**: [`King`](king.h.driver.md#King)  (Data Structure)
 
 
 ---
 #### King::\~King<!-- {{#callable:King::~King}} -->
-The destructor for the King class is a default destructor that performs no specific actions.
-- **Inputs**:
-    - None
+The destructor `~King()` is a default destructor for the `King` class that performs no specific actions.
+- **Inputs**: None
 - **Control Flow**:
-    - The destructor is defined but contains no code, indicating it performs no operations when a King object is destroyed.
-- **Output**:
-    - There is no output or return value from this destructor.
+    - The destructor `~King()` is called when a `King` object is destroyed.
+    - No specific actions or resource deallocations are performed within the destructor.
+- **Output**: There is no output or return value from the destructor.
 - **See also**: [`King`](king.h.driver.md#King)  (Data Structure)
 
 
 ---
 #### King::value<!-- {{#callable:King::value}} -->
 The `value` function returns the point value of the King piece, which is 0.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
     - The function simply returns the integer value 0.
-- **Output**:
-    - The function returns an integer value representing the point value of the King piece, which is 0.
+- **Output**: The function returns an integer value of 0, representing the point value of the King piece in a chess game.
 - **See also**: [`King`](king.h.driver.md#King)  (Data Structure)
 
 
@@ -67,27 +61,26 @@ The `canMoveTo` function determines if a King chess piece can legally move to a 
 - **Inputs**:
     - `location`: A reference to a `Square` object representing the target location to which the King is attempting to move.
 - **Control Flow**:
-    - Initialize `validMove` to `false` to track if the move is valid.
-    - Calculate `translationX` as the difference between the target square's x-coordinate and the King's current x-coordinate.
-    - Calculate `translationY` as the difference between the target square's y-coordinate and the King's current y-coordinate.
-    - Check if the move is one square forward or backward by verifying if `abs(translationY) == 1` and `translationX == 0`; if true, set `validMove` to `true`.
-    - Check if the move is one square sideways by verifying if `abs(translationX) == 1` and `translationY == 0`; if true, set `validMove` to `true`.
-    - Check if the move is one square diagonally by verifying if `abs(translationX) == 1` and `abs(translationY) == 1`; if true, set `validMove` to `true`.
-    - Return the value of `validMove`, indicating whether the move is valid.
-- **Output**:
-    - A boolean value indicating whether the King can legally move to the specified square.
+    - Initialize `validMove` to `false`.
+    - Calculate `translationX` as the difference between the x-coordinate of the target location and the current x-coordinate of the King.
+    - Calculate `translationY` as the difference between the y-coordinate of the target location and the current y-coordinate of the King.
+    - Check if the move is one square forward or backward (i.e., `abs(translationY) == 1` and `translationX == 0`), and set `validMove` to `true` if so.
+    - Check if the move is one square sideways (i.e., `abs(translationX) == 1` and `translationY == 0`), and set `validMove` to `true` if so.
+    - Check if the move is one square diagonally (i.e., `abs(translationX) == 1` and `abs(translationY) == 1`), and set `validMove` to `true` if so.
+    - Return the value of `validMove`.
+- **Output**: A boolean value indicating whether the King can legally move to the specified square (`true` if the move is legal, `false` otherwise).
 - **See also**: [`King`](king.h.driver.md#King)  (Data Structure)
 
 
 ---
 #### King::display<!-- {{#callable:King::display}} -->
-The `display` function outputs the color and symbol of the King piece to the console.
-- **Inputs**:
-    - None
+The `display` function outputs the color and type of the King piece to the console.
+- **Inputs**: None
 - **Control Flow**:
-    - The function uses the `cout` stream to output the color of the King piece followed by the character 'K'.
-- **Output**:
-    - The function outputs a string to the console, which is the color of the King piece concatenated with the letter 'K'.
+    - The function accesses the `_color` member variable of the `King` class, which indicates the color of the piece.
+    - It concatenates the color with the character 'K', representing the King piece.
+    - The concatenated string is then output to the console using `cout`.
+- **Output**: The function outputs a string to the console, which is the color of the King piece followed by the letter 'K'.
 - **See also**: [`King`](king.h.driver.md#King)  (Data Structure)
 
 

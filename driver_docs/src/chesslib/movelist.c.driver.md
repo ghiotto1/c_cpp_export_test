@@ -1,7 +1,7 @@
 # Purpose
-This C source code file implements a linked list data structure specifically designed to manage a list of moves, likely for a chess game, as suggested by the inclusion of "chesslib/movelist.h". The primary components of this implementation include functions for creating and managing a `moveList`, which is a singly linked list where each node represents a move. Key functions include [`moveListCreate`](#moveListCreate) for initializing a new list, [`moveListNodeCreate`](#moveListNodeCreate) for creating a new node, [`moveListAdd`](#moveListAdd) for appending a move to the list, [`moveListGet`](#moveListGet) for retrieving a move by its index, and [`moveListUndo`](#moveListUndo) for removing the last move from the list. Additionally, the [`moveListGetUciString`](#moveListGetUciString) function generates a UCI (Universal Chess Interface) formatted string from the list of moves, which is a common format used in chess engines for move representation.
+This C source code file implements a linked list data structure specifically designed to manage a list of moves, likely for a chess application, as suggested by the inclusion of "chesslib/movelist.h". The primary functionality provided by this code is the creation, manipulation, and management of a move list, which includes operations such as adding moves, retrieving moves by index, undoing the last move, and converting the list of moves into a UCI (Universal Chess Interface) string format. The code defines several key functions: [`moveListCreate`](#moveListCreate) initializes a new move list, [`moveListNodeCreate`](#moveListNodeCreate) creates a new node for a move, [`moveListAdd`](#moveListAdd) appends a move to the list, [`moveListGet`](#moveListGet) retrieves a move at a specified index, [`moveListUndo`](#moveListUndo) removes the last move, [`moveListGetUciString`](#moveListGetUciString) generates a UCI string representation of the move list, and [`moveListFree`](#moveListFree) deallocates the memory used by the move list.
 
-The code is structured to provide a narrow functionality focused on managing a sequence of moves, with a clear emphasis on operations typical for a linked list, such as adding, retrieving, and removing elements. The implementation is not a standalone executable but rather a component intended to be part of a larger system, likely a chess engine or application, as indicated by its reliance on external definitions such as `move` and `moveGetUci`. The file does not define public APIs or external interfaces directly but provides essential internal functionality that can be utilized by other parts of the chess application through the `movelist.h` header. The code also includes memory management functions like [`moveListFree`](#moveListFree) to ensure proper deallocation of resources, highlighting the importance of efficient memory handling in C programming.
+The code is structured to be part of a larger chess library, as indicated by the inclusion of a header file from "chesslib". It does not define a main function, suggesting that it is intended to be compiled as part of a library rather than an executable. The move list is implemented as a singly linked list, with each node containing a move and a pointer to the next node. The code handles memory allocation and deallocation explicitly, which is crucial in C to prevent memory leaks. The [`moveListGetUciString`](#moveListGetUciString) function is particularly noteworthy as it converts the list of moves into a format that can be used by chess engines and interfaces that support the UCI protocol, highlighting the code's role in facilitating communication between different components of a chess application.
 # Imports and Dependencies
 
 ---
@@ -15,16 +15,14 @@ The code is structured to provide a narrow functionality focused on managing a s
 ---
 ### moveListCreate<!-- {{#callable:moveListCreate}} -->
 The `moveListCreate` function allocates and initializes a new `moveList` structure with default values.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
     - Allocate memory for a new `moveList` structure using `malloc`.
     - Initialize the `head` pointer of the list to `NULL`, indicating an empty list.
     - Initialize the `tail` pointer of the list to `NULL`, indicating an empty list.
-    - Set the `size` of the list to `0`, indicating that the list is currently empty.
+    - Set the `size` of the list to `0`, indicating that the list is empty.
     - Return the pointer to the newly created `moveList` structure.
-- **Output**:
-    - A pointer to a newly allocated and initialized `moveList` structure.
+- **Output**: A pointer to a newly allocated and initialized `moveList` structure.
 
 
 ---
@@ -33,12 +31,11 @@ The function `moveListNodeCreate` allocates memory for a new `moveListNode`, ini
 - **Inputs**:
     - `move`: A `move` structure that contains the data to be stored in the new node.
 - **Control Flow**:
-    - Allocate memory for a new `moveListNode` using `malloc`.
+    - Allocate memory for a new `moveListNode` structure.
     - Assign the provided `move` to the `move` field of the newly created node.
-    - Set the `next` pointer of the node to `NULL` to indicate it is the last node in the list.
+    - Set the `next` pointer of the node to `NULL`, indicating it is the last node in the list.
     - Return the pointer to the newly created node.
-- **Output**:
-    - A pointer to the newly created `moveListNode` containing the specified move and a `NULL` next pointer.
+- **Output**: A pointer to the newly created `moveListNode` structure.
 
 
 ---
@@ -51,10 +48,9 @@ The `moveListAdd` function appends a new move to the end of a move list, updatin
     - Create a new `moveListNode` using the provided `move` by calling [`moveListNodeCreate`](#moveListNodeCreate).
     - Check if the `head` of the list is `NULL`, indicating the list is empty.
     - If the list is empty, set both the `head` and `tail` of the list to the newly created node.
-    - If the list is not empty, set the `next` pointer of the current `tail` node to the new node and update the `tail` to the new node.
+    - If the list is not empty, set the `next` pointer of the current `tail` to the new node and update the `tail` to this new node.
     - Increment the `size` of the list by one.
-- **Output**:
-    - The function does not return a value; it modifies the `moveList` structure in place by adding a new node to it.
+- **Output**: The function does not return a value; it modifies the `moveList` structure in place.
 - **Functions called**:
     - [`moveListNodeCreate`](#moveListNodeCreate)
 
@@ -69,23 +65,21 @@ The `moveListGet` function retrieves a move from a linked list of moves at a spe
     - Initialize `currNode` to the head of the list.
     - Iterate through the list, moving to the next node and decrementing `index` until `index` is zero.
     - Return the move stored in the current node.
-- **Output**:
-    - The function returns the `move` located at the specified index in the `moveList`.
+- **Output**: The function returns a `move` from the specified index in the `moveList`.
 
 
 ---
 ### moveListUndo<!-- {{#callable:moveListUndo}} -->
-The `moveListUndo` function removes the last move from a singly linked list of moves, updating the list's head, tail, and size accordingly.
+The `moveListUndo` function removes the last move from a singly linked list of moves, effectively undoing the most recent move.
 - **Inputs**:
     - `list`: A pointer to a `moveList` structure, which represents a singly linked list of moves.
 - **Control Flow**:
     - Check if the list is NULL or if the list's head is NULL; if so, return immediately as there is nothing to undo.
-    - If the list contains only one node, free the head node and set both the head and tail pointers to NULL.
-    - If the list contains more than one node, traverse the list to find the second-to-last node.
-    - Free the last node, update the second-to-last node's next pointer to NULL, and set the list's tail to the second-to-last node.
-    - Decrement the list's size by one.
-- **Output**:
-    - The function does not return a value; it modifies the input `moveList` in place by removing the last node and updating the list's metadata.
+    - Check if the list contains only one node (i.e., `list->head->next` is NULL); if true, free the head node and set both the head and tail pointers to NULL.
+    - If the list contains more than one node, iterate through the list to find the last node and its predecessor.
+    - Free the last node, set the predecessor's `next` pointer to NULL, and update the list's tail pointer to the predecessor node.
+    - Decrement the size of the list by one.
+- **Output**: The function does not return a value; it modifies the `moveList` structure in place by removing the last node and updating the list's size.
 
 
 ---
@@ -96,13 +90,12 @@ The function `moveListGetUciString` generates a UCI (Universal Chess Interface) 
 - **Control Flow**:
     - Check if the move list is empty; if so, allocate a single character for the string, set it to null, and return it.
     - If the move list contains only one move, convert that move to a UCI string and return it.
-    - Calculate the required size for the UCI string, considering 4 characters per move, a space between moves, and additional space for promotion characters.
+    - Calculate the required size for the UCI string, accounting for each move's characters, spaces, and any promotion characters.
     - Allocate memory for the UCI string based on the calculated size.
     - Iterate over each move in the list, convert it to a UCI string, append it to the result string, and add a space after each move.
     - Replace the last space with a null terminator to properly end the string.
     - Return the constructed UCI string.
-- **Output**:
-    - A dynamically allocated string containing the UCI representation of the moves in the list, which must be freed by the caller.
+- **Output**: A dynamically allocated string containing the UCI representation of the moves in the list, which must be freed by the caller.
 - **Functions called**:
     - [`moveGetUci`](move.c.driver.md#moveGetUci)
 
@@ -119,7 +112,6 @@ The `moveListFree` function deallocates all memory associated with a `moveList` 
     - Free the current node.
     - Move to the next node by setting `node` to `next`.
     - After the loop, free the `moveList` structure itself.
-- **Output**:
-    - The function does not return any value; it performs memory deallocation for the provided `moveList` and its nodes.
+- **Output**: The function does not return any value; it frees the memory occupied by the `moveList` and its nodes.
 
 

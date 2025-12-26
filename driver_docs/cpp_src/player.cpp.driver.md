@@ -1,7 +1,7 @@
 # Purpose
-The `player.cpp` file is part of a Chess game project and implements the [`Player`](#PlayerPlayer) class, which encapsulates the behavior and attributes of a chess player. This file provides functionality specific to managing a player's actions and state within a game, such as making moves, checking if the player is in check, capturing pieces, and calculating the player's score based on captured pieces. The class constructor initializes a player with a name, color, a reference to their king, and a set of pieces they control. The [`makeMove`](#PlayermakeMove) function handles player input for moves, ensuring they are valid and in algebraic notation, and then executes the move on the board. The [`inCheck`](#PlayerinCheck) function determines if the player's king is under threat from any of the opponent's pieces, while the [`capture`](#Playercapture) function updates the state of a captured piece and adds it to the player's collection of captured pieces.
+The `player.cpp` file is part of a Chess game project and implements the functionality related to a player in the game. This file defines the [`Player`](#PlayerPlayer) class, which encapsulates the attributes and behaviors of a chess player, such as their name, the color they are playing (white or black), their pieces, and their king. The class provides methods for making moves, checking if the player is in check, capturing opponent pieces, and calculating the player's score based on captured pieces. The [`makeMove`](#PlayermakeMove) method is particularly important as it handles player input for moves, validates the input, and executes the move on the board if valid. The [`inCheck`](#PlayerinCheck) method determines if the player's king is under threat from any of the opponent's pieces, which is a critical aspect of chess gameplay.
 
-The file includes several key components such as the [`makeMove`](#PlayermakeMove), [`inCheck`](#PlayerinCheck), [`capture`](#Playercapture), and [`score`](#Playerscore) methods, which are central to the player's interaction with the game. The [`makeMove`](#PlayermakeMove) method is particularly important as it interfaces with the board to execute moves, while [`inCheck`](#PlayerinCheck) and [`capture`](#Playercapture) manage game state and player strategy. The file also defines accessors like [`getName`](#PlayergetName), [`isWhite`](#PlayerisWhite), [`myPieces`](#PlayermyPieces), and [`myKing`](#PlayermyKing), which provide information about the player's identity and current game status. This file is a C++ source file that is likely part of a larger application, interacting with other components such as `board.h`, `game.h`, and `player.h`, and does not define a standalone executable. Instead, it contributes to the broader functionality of the Chess game by managing player-specific logic and interactions.
+This file is a C++ source file that likely works in conjunction with other components of the Chess project, such as `board.h` and `game.h`, which are included at the beginning of the file. The [`Player`](#PlayerPlayer) class interacts with these components to manage the state of the game, such as the board's configuration and the pieces' positions. The file does not define a public API or external interface but rather provides the internal logic necessary for player-related operations within the game. The use of standard input/output functions indicates that this file may be part of a console-based application where players input their moves directly.
 # Imports and Dependencies
 
 ---
@@ -32,46 +32,44 @@ The file includes several key components such as the [`makeMove`](#PlayermakeMov
 
 ---
 #### Player::Player<!-- {{#callable:Player::Player}} -->
-The Player constructor initializes a Player object with a name, color, a reference to their King, and a set of their pieces.
+The `Player` constructor initializes a `Player` object with a name, color, a reference to their king, and a set of their pieces.
 - **Inputs**:
     - `name`: A string representing the player's name.
     - `isWhite`: A boolean indicating whether the player is playing with the white pieces.
-    - `myKing`: A reference to the player's King object.
-    - `myPieces`: A reference to a set of pointers to the player's Piece objects.
+    - `myKing`: A reference to the `King` object that belongs to the player.
+    - `myPieces`: A reference to a set of pointers to `Piece` objects representing the player's pieces.
 - **Control Flow**:
-    - The constructor initializes the private member variables _name, _isWhite, _myPieces, and _myKing with the provided arguments.
-- **Output**:
-    - The function does not return any value as it is a constructor.
+    - The constructor initializes the `_name` member variable with the provided `name` argument.
+    - The `_isWhite` member variable is initialized with the `isWhite` argument to indicate the player's color.
+    - The `_myPieces` member variable is initialized with the reference to the set of pieces provided by `myPieces`.
+    - The `_myKing` member variable is initialized with the reference to the `King` object provided by `myKing`.
+- **Output**: The constructor does not return any value as it is used to initialize a `Player` object.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::\~Player<!-- {{#callable:Player::~Player}} -->
-The `~Player` function is the default destructor for the `Player` class, responsible for cleaning up resources when a `Player` object is destroyed.
-- **Inputs**:
-    - None
+The `Player::~Player()` function is the default destructor for the `Player` class, which currently does not perform any specific operations upon object destruction.
+- **Inputs**: None
 - **Control Flow**:
-    - The destructor is defined but does not contain any specific logic or resource deallocation code.
-    - It is implicitly called when a `Player` object goes out of scope or is explicitly deleted.
-- **Output**:
-    - The destructor does not return any value or perform any specific actions, as it is currently empty.
+    - The destructor is defined but contains no code, indicating it does not perform any specific actions when a `Player` object is destroyed.
+- **Output**: There is no output or return value from this destructor, as it is a default destructor with no operations.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::makeMove<!-- {{#callable:Player::makeMove}} -->
-The `makeMove` function allows a player to input and execute a move in a chess game, ensuring the move is valid and in the correct format.
+The `makeMove` function allows a player to input and execute a move on the chessboard, ensuring the move is valid and in algebraic notation.
 - **Inputs**:
-    - `none`: The function does not take any parameters; it relies on user input for the move.
+    - `None`: The function does not take any parameters; it relies on user input for the move.
 - **Control Flow**:
-    - Check if the player is currently in check and announce it if true.
+    - Check if the player is in check and announce it if true.
     - Prompt the player to enter a move in algebraic notation (e.g., 'a2 a4').
     - Validate the input to ensure it is in the correct format and the starting square is occupied.
-    - If the input is invalid, prompt the player to enter a move again until a valid move is provided.
-    - Translate the valid input from algebraic notation to board coordinates.
-    - Execute the move by moving the piece from the starting square to the destination square.
-- **Output**:
-    - Returns a boolean indicating whether the move was successfully executed.
+    - If the input is invalid, prompt the player again until a valid move is entered.
+    - Translate the algebraic notation into board coordinates.
+    - Move the piece from the starting square to the destination square using the `moveTo` method.
+- **Output**: Returns a boolean indicating whether the move was successfully executed.
 - **Functions called**:
     - [`Player::inCheck`](#PlayerinCheck)
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
@@ -80,16 +78,14 @@ The `makeMove` function allows a player to input and execute a move in a chess g
 ---
 #### Player::inCheck<!-- {{#callable:Player::inCheck}} -->
 The `inCheck` function determines if the current player's king is in check by checking if any opponent's piece can move to the king's location.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
-    - Initialize a boolean variable `check` to `false`.
+    - Initialize a boolean variable `check` to false.
     - Iterate over each piece in the opponent's set of pieces.
     - For each piece, check if it is located on the board and can move to the current player's king's location.
-    - If such a piece is found, set `check` to `true`.
+    - If such a piece is found, set `check` to true.
     - Return the value of `check`.
-- **Output**:
-    - A boolean value indicating whether the player's king is in check (true if in check, false otherwise).
+- **Output**: A boolean value indicating whether the player's king is in check (true if in check, false otherwise).
 - **Functions called**:
     - [`Player::myKing`](#PlayermyKing)
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
@@ -99,76 +95,65 @@ The `inCheck` function determines if the current player's king is in check by ch
 #### Player::capture<!-- {{#callable:Player::capture}} -->
 The `capture` function removes a piece from the board and adds it to the player's set of captured pieces.
 - **Inputs**:
-    - `aPiece`: A pointer to the Piece object that is to be captured.
+    - `aPiece`: A pointer to the `Piece` object that is to be captured.
 - **Control Flow**:
-    - The function first calls `setLocation(NULL)` on the `aPiece` to unset its location on the board, effectively removing it from play.
-    - The function then inserts `aPiece` into the player's `_capturedPieces` set, indicating that the piece has been captured by this player.
-- **Output**:
-    - The function does not return any value.
+    - The function first sets the location of the piece `aPiece` to `NULL`, effectively removing it from the board.
+    - Then, it inserts the piece into the player's `_capturedPieces` set, which keeps track of all pieces captured by the player.
+- **Output**: The function does not return any value.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::getName<!-- {{#callable:Player::getName}} -->
 The `getName` function returns the name of the player.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
     - The function accesses the private member variable `_name` of the `Player` class.
     - It returns the value of `_name`.
-- **Output**:
-    - The function returns a `string` representing the player's name.
+- **Output**: A string representing the player's name.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::isWhite<!-- {{#callable:Player::isWhite}} -->
 The `isWhite` function checks if the player is the white player in a chess game.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
     - The function directly returns the value of the private member variable `_isWhite`.
-- **Output**:
-    - A boolean value indicating whether the player is the white player (`true` if white, `false` otherwise).
+- **Output**: A boolean value indicating whether the player is the white player (`true`) or not (`false`).
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::score<!-- {{#callable:Player::score}} -->
-The `score` function calculates the total score of a player's captured pieces by summing their values.
-- **Inputs**:
-    - None
+The `score` function calculates and returns the total score of all pieces captured by the player.
+- **Inputs**: None
 - **Control Flow**:
-    - Initialize a local variable `score` to 0 to hold the total score.
-    - Iterate over each piece in the `_capturedPieces` set using an iterator.
-    - For each piece, retrieve its value using the `value()` method and add it to the `score`.
-    - Return the total `score` after iterating through all captured pieces.
-- **Output**:
-    - The function returns an integer representing the total score of the player's captured pieces.
+    - Initialize a local variable `score` to 0.
+    - Iterate over each piece in the player's `_capturedPieces` set.
+    - For each piece, add its value (obtained by calling the `value()` method on the piece) to the `score`.
+    - Return the accumulated `score`.
+- **Output**: The function returns an integer representing the total score of the captured pieces.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::myPieces<!-- {{#callable:Player::myPieces}} -->
 The `myPieces` function returns a pointer to the set of pieces owned by the player.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
-    - The function simply returns the address of the `_myPieces` member variable, which is a reference to a set of `Piece` pointers.
-- **Output**:
-    - A pointer to a `set<Piece*>` representing the player's pieces.
+    - The function simply returns the address of the `_myPieces` member variable, which is a reference to a set of `Piece*`.
+- **Output**: A pointer to a `set<Piece*>` representing the player's pieces.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
 ---
 #### Player::myKing<!-- {{#callable:Player::myKing}} -->
 The `myKing` function returns a pointer to the `King` object associated with the `Player` instance.
-- **Inputs**:
-    - None
+- **Inputs**: None
 - **Control Flow**:
-    - The function simply returns the address of the `_myKing` member variable, which is a reference to a `King` object.
-- **Output**:
-    - A pointer to the `King` object associated with the `Player` instance.
+    - The function directly returns the address of the `_myKing` member variable, which is a reference to a `King` object.
+- **Output**: A pointer to the `King` object associated with the `Player` instance.
 - **See also**: [`Player`](player.h.driver.md#Player)  (Data Structure)
 
 
